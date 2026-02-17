@@ -1,40 +1,83 @@
-public class Pet {
+public class Pet
+{
+    private String name;
+    private String type;
+    private int age;
 
-   // private data 
-   private String name;
+    // Default constructor
+    public Pet()
+    {
+        setType("Animal");
+        setName("Pet Name");
+        setAge(1);
+    }
 
-   // public constructor
-   public Pet() {
-      this.setName("Pet Name");
-   }
+    // Custom constructor (3 inputs: type, name, age)
+    public Pet(String type, String name, int age)
+    {
+        setType(type);
+        setName(name);
+        setAge(age);
+    }
 
-   //public set or mutator method for every private data field
-   public void setName(String newName) {
-      this.name = newName;
-   }
+    // Accessors
+    public String getType()
+    {
+        return type;
+    }
 
-   // public get or accessor method for every private data field
-   public String getName() {
-      return this.name;
-   }
+    public String getName()
+    {
+        return name;
+    }
 
-   // public toString method that prints out all of the object state
-   public String toString() {
-      String output = "Pet information:\n";
-      output += "Name: " + this.getName();
-      return output;
-   }
+    public int getAge()
+    {
+        return age;
+    }
 
-   // main
-   public static void main(String[] args) {
+    // Mutators
+    public void setType(String type)
+    {
+        this.type = type;
+    }
 
-      // instantiate Pet
-      Pet pet1 = new Pet();
-      System.out.println(pet1);
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
-      // second Pet object using set method
-      Pet pet2 = new Pet();
-      pet2.setName("Buster");
-      System.out.println(pet2);
-   }
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+
+    // speak() method (2 conditions + else)
+    public String speak()
+    {
+        if (type != null && type.equalsIgnoreCase("dog"))
+        {
+            return "Woof";
+        }
+        else if (type != null && type.equalsIgnoreCase("cat"))
+        {
+            return "Meow";
+        }
+        else
+        {
+            return "Yowl";
+        }
+    }
+
+    // toString() includes new fields and calls speak()
+    public String toString()
+    {
+        String output = "";
+        output += "Pet information:\n";
+        output += "Type: " + getType() + "\n";
+        output += "Name: " + getName() + "\n";
+        output += "Sound: " + speak() + "\n";
+        output += "Age:  " + getAge() + "\n";
+        return output;
+    }
 }
