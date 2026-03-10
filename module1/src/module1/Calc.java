@@ -4,9 +4,18 @@ public class Calc {
     private double num1;
     private double num2;
 
-    // constructor
-    public Calc(double n1, double n2) {
+    // default constructor
+    public Calc() {
+        num1 = 0;
+        num2 = 0;
+    }
+
+    // setters
+    public void setNum1(double n1) {
         num1 = n1;
+    }
+
+    public void setNum2(double n2) {
         num2 = n2;
     }
 
@@ -20,24 +29,26 @@ public class Calc {
     }
 
     // math methods
-    public double sum() {
+    public double add() {
         return num1 + num2;
     }
 
-    public double difference() {
+    public double subtract() {
         return num1 - num2;
     }
 
-    public double product() {
+    public double multiply() {
         return num1 * num2;
     }
 
-    public double quotient() {
+    public double divide() {
         return num1 / num2;
     }
 
     // toString method
     public String toString() {
-        return "Num1: " + num1 + "\nNum2: " + num2;
+        return "Displaying private data fields using toString():\n" +
+               "Num1: " + num1 + "\n" +
+               "Num2: " + num2;
     }
 }
