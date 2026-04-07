@@ -6,7 +6,7 @@ public class Asn5 {
 
     public static void main(String[] args) {
 
-        // Create two ArrayLists: one for strings and one for integers
+        // two ArrayLists: one for strings and one for integers
         ArrayList<String> fruits = new ArrayList<>();
         ArrayList<Integer> numbers = new ArrayList<>();
 
@@ -21,32 +21,32 @@ public class Asn5 {
         numbers.add(30);
         numbers.add(40);
 
-        // Display the original fruits list
+        // display the original fruits list
         System.out.println("Original Fruits List:");
         for (String fruit : fruits) {
             System.out.println(fruit);
         }
 
-        // Display the original numbers list
+        // display the original numbers list
         System.out.println("\nOriginal Numbers List:");
         for (int num : numbers) {
             System.out.println(num);
         }
 
-        // Use two extra ArrayList methods
+        // use two extra ArrayList methods
         fruits.remove(1);   // removes Banana
         numbers.remove(2);  // removes 30
 
         fruits.set(1, "Pineapple"); // replaces Orange
         numbers.set(0, 99);         // replaces 10
 
-        // Display the updated fruits list
+        // display the updated fruits list
         System.out.println("\nUpdated Fruits List:");
         for (String fruit : fruits) {
             System.out.println(fruit);
         }
 
-        // Display the updated numbers list
+        // display the updated numbers list
         System.out.println("\nUpdated Numbers List:");
         for (int num : numbers) {
             System.out.println(num);
