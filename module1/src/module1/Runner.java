@@ -1,13 +1,34 @@
 package module1;
 
+import java.util.Scanner;
+
 public class Runner {
 
     public static void main(String[] args) {
 
-        Tests myTests = new Tests();   // instantiate object
+        Scanner input = new Scanner(System.in);
 
-        myTests.getAverage();          // call method
+        Calc calc = new Calc();
 
-        System.out.println(myTests);   // calls toString()
+        // safe input
+        double firstNumber =
+                calc.getValidNumber(input, "Enter first number: ");
+
+        double secondNumber =
+                calc.getValidNumber(input, "Enter second number: ");
+
+        // set numbers
+        calc.setNum1(firstNumber);
+        calc.setNum2(secondNumber);
+
+        // display results
+        System.out.println("\n" + calc);
+
+        System.out.println("Addition: " + calc.add());
+        System.out.println("Subtraction: " + calc.subtract());
+        System.out.println("Multiplication: " + calc.multiply());
+        System.out.println("Division: " + calc.divide());
+
+        input.close();
     }
 }

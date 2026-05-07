@@ -1,3 +1,7 @@
+package module1;
+
+import java.util.Scanner;
+
 public class Calc {
 
     // private data fields
@@ -8,6 +12,22 @@ public class Calc {
     public Calc() {
         num1 = 0;
         num2 = 0;
+    }
+
+    // safe numeric input method
+    public double getValidNumber(Scanner input, String message) {
+
+        while (true) {
+
+            System.out.print(message);
+
+            if (input.hasNextDouble()) {
+                return input.nextDouble();
+            } else {
+                System.out.println("Invalid input. Please enter a numeric value.");
+                input.next(); // clears bad input
+            }
+        }
     }
 
     // setters
